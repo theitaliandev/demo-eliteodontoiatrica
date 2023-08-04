@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Elite Odontoiatrica</title>
+</head>
+<body>
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/c0d685cd-a07e-4617-9114-55621f94f56d/webchat/config.js" defer></script>
+    <script>
+        window.addEventListener("message", function(event){
+                if(event.data.type == "LIFECYCLE.LOADED") {
+                    window.botpressWebChat.sendEvent({
+                        type: "trigger",
+                        channel: "web",
+                        payload: {
+                            text: ""
+                        }
+                    })
+                }
+            },['LIFECYCLE.LOADED']
+        )
+    </script>
+</body>
+</html>
